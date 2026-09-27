@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="profile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+      integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>profile</title>
+    <link rel="stylesheet" href="../responsive.css" />
+  </head>
+  <body class="account-page">
+    <div class="profile-page">
+      <div class="profile-card">
+        <div class="profile-header">
+          <div class="avatar-wrapper">
+            <img class="profile-avatar" src="" alt="Profile avatar" />
+            <span class="verified-badge">✓</span>
+          </div>
+
+          <div class="profile-title">
+            <h1 class="full-name"></h1>
+            <p class="role"></p>
+          </div>
+        </div>
+
+        <div class="profile-body"><a href="../index.html">← მაღაზიაში დაბრუნება</a><p id="profile-status" role="status"></p><button id="retry-profile" type="button" hidden>ხელახლა ცდა</button>
+          <h2>Personal Information</h2>
+
+          <div class="info-grid">
+            <div class="info-box">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <span>Email</span>
+                <p class="email"></p>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <span>Phone</span>
+                <p class="phone"></p>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <span>Address</span>
+                <p class="address"></p>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <i class="fa-solid fa-cake-candles"></i>
+              <div>
+                <span>Age</span>
+                <p class="age"></p>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <i class="fa-solid fa-user"></i>
+              <div>
+                <span>Gender</span>
+                <p class="gender"></p>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <i class="fa-solid fa-map-pin"></i>
+              <div>
+                <span>Zip Code</span>
+                <p class="zipcode"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-footer">
+          <div class="account-status">
+            <span class="status-dot"></span>
+            <span>Verified Account</span>
+          </div>
+
+          <button class="edit-btn" type="button" disabled>
+            <i class="fa-solid fa-pen"></i>
+            Edit Profile
+          </button>
+        </div>
+      </div>
+    </div>
+    <dialog id="account-dialog" aria-labelledby="account-title">
+      <div class="dialog-heading"><h2 id="account-title">ანგარიშის მართვა</h2><button type="button" id="close-account" aria-label="დახურვა">×</button></div>
+      <form id="account-form" novalidate>
+        <h3>პროფილის განახლება</h3><fieldset class="edit-fields">
+        <div class="edit-field"><label for="edit-firstName">სახელი</label><input id="edit-firstName" name="firstName" type="text" aria-describedby="error-firstName"><p class="field-error" id="error-firstName" hidden></p></div>
+<div class="edit-field"><label for="edit-lastName">გვარი</label><input id="edit-lastName" name="lastName" type="text" aria-describedby="error-lastName"><p class="field-error" id="error-lastName" hidden></p></div>
+<div class="edit-field"><label for="edit-age">ასაკი</label><input id="edit-age" name="age" type="number" aria-describedby="error-age"><p class="field-error" id="error-age" hidden></p></div>
+<div class="edit-field"><label for="edit-address">მისამართი</label><input id="edit-address" name="address" type="text" aria-describedby="error-address"><p class="field-error" id="error-address" hidden></p></div>
+<div class="edit-field"><label for="edit-phone">ტელეფონი (+995)</label><input id="edit-phone" name="phone" type="tel" aria-describedby="error-phone"><p class="field-error" id="error-phone" hidden></p></div>
+<div class="edit-field"><label for="edit-zipcode">საფოსტო ინდექსი</label><input id="edit-zipcode" name="zipcode" type="text" aria-describedby="error-zipcode"><p class="field-error" id="error-zipcode" hidden></p></div>
+<div class="edit-field"><label for="edit-avatar">ავატარის URL</label><input id="edit-avatar" name="avatar" type="url" aria-describedby="error-avatar"><p class="field-error" id="error-avatar" hidden></p></div>
+        <div class="edit-field"><label for="edit-gender">სქესი</label><select id="edit-gender" name="gender" aria-describedby="error-gender"><option value="">აირჩიეთ</option><option value="MALE">MALE</option><option value="FEMALE">FEMALE</option><option value="OTHER">OTHER</option></select><p class="field-error" id="error-gender" hidden></p></div>
+        </fieldset><p class="form-status" role="status"></p><button type="submit" class="save-btn">ცვლილებების შენახვა</button>
+      </form>
+      <form id="password-form" novalidate>
+        <h3>პაროლის შეცვლა</h3><fieldset class="edit-fields">
+        <div class="edit-field"><label for="edit-oldPassword">მიმდინარე პაროლი</label><div class="password-input"><input id="edit-oldPassword" name="oldPassword" type="password" autocomplete="current-password" aria-describedby="error-oldPassword"><button type="button" class="password-toggle" aria-controls="edit-oldPassword" aria-pressed="false">ჩვენება</button></div><p class="field-error" id="error-oldPassword" hidden></p></div>
+<div class="edit-field"><label for="edit-newPassword">ახალი პაროლი</label><div class="password-input"><input id="edit-newPassword" name="newPassword" type="password" autocomplete="new-password" aria-describedby="error-newPassword"><button type="button" class="password-toggle" aria-controls="edit-newPassword" aria-pressed="false">ჩვენება</button></div><p class="field-error" id="error-newPassword" hidden></p></div>
+        </fieldset><p class="password-hint">ახალი პაროლი: მინიმუმ 8 სიმბოლო, ერთი დიდი ლათინური ასო და ერთი ციფრი.</p><p class="form-status" role="status"></p><button type="submit" class="save-btn">პაროლის შეცვლა</button>
+      </form>
+    </dialog>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.8/dist/js.cookie.min.js"></script>
+    <script src="profile.js"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ჩემი კალათა</title>
+    <link rel="stylesheet" href="cart.css" />
+    <link rel="stylesheet" href="../responsive.css" />
+  </head>
+  <body class="basket-page">
+    <header class="page-header">
+      <a class="brand" href="../index.html"><span class="brand-icon">S</span> SHOP</a>
+      <a class="back-link" href="../index.html">← მაღაზიაში დაბრუნება</a>
+    </header>
+    <main>
+      <div class="page-heading">
+        <p class="eyebrow">შენი არჩევანი</p>
+        <h1>ჩემი კალათა<span class="heading-dot">.</span></h1>
+        <p class="cart-mode"></p>
+      </div>
+      <div class="cart-layout">
+        <section class="items-panel" aria-label="კალათის პროდუქტები">
+          <div class="panel-heading"><h2>პროდუქტები</h2><span><span class="cart-count">0</span> ნივთი</span></div>
+          <div class="cart-list"></div>
+          <p class="cart-status" role="status"></p>
+          <button class="cart-retry" type="button" hidden>ხელახლა ცდა</button>
+          <a class="continue-link" href="../index.html">← შოპინგის გაგრძელება</a>
+        </section>
+        <aside class="summary">
+          <p class="eyebrow">შეკვეთის დეტალები</p>
+          <h2>შეჯამება</h2>
+          <div class="summary-row"><span>ნივთების რაოდენობა</span><span class="cart-count">0</span></div>
+          <div class="cart-total" aria-live="polite"><span>საერთო ფასი</span><strong>0.00 $</strong></div>
+          <a class="primary-link" href="../index.html">პროდუქტების დამატება <span>↗</span></a>
+          <p class="summary-note">რაოდენობის შეცვლისას ჯამი ავტომატურად განახლდება.</p>
+        </aside>
+      </div>
+    </main>
+    <footer>შენი შემდეგი რჩეული ახლოსაა.</footer>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.8/dist/js.cookie.min.js"></script>
+    <script src="cart.js"></script>
+  </body>
+</html>
